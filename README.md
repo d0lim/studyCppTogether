@@ -9,3 +9,6 @@
 ## 잡담
 열심히 해보자 이거야.  
 그리고 코드 스타일에 대해서도 이야기를 좀 해보자. 
+
+## 과제 설명 참조 링크
+[온디맨드카페 링크](https://github.com/imdigo/onDemandCafeFx/blob/master/README.md)
