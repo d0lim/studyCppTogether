@@ -10,5 +10,10 @@
 열심히 해보자 이거야.  
 그리고 코드 스타일에 대해서도 이야기를 좀 해보자. 
 
+## 개발환경
+공통적으로 Goorm IDE를 쓰도록 한다.  
+그리고 크롬은 최신버전으로 업데이트해라.  
+사지방에서 프록시로 막혀있어서 자동업데이트 막혀있으니까 [링크](https://www.chrome.com) 직접 들어가서 업데이트 할 수 있도록.
+
 ## 과제 설명 참조 링크
 [온디맨드카페 링크](https://github.com/imdigo/onDemandCafeFx/blob/master/README.md)
