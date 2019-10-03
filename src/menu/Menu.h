@@ -1,6 +1,6 @@
-#ifndef Menu_h
+#ifndef MENU_H
 
-#define Menu_h
+#define MENU_H
 
 // Input your code here... ex) #include <iostream>
 

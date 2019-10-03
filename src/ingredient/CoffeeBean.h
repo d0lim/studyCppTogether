@@ -1,6 +1,6 @@
-#ifndef CoffeeBean_h
+#ifndef COFFEEBEAN_H
 
-#define CoffeeBean_h
+#define COFFEEBEEAN_H
 
 // Input your code here... ex) #include <iostream>
 

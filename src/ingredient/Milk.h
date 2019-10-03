@@ -1,6 +1,6 @@
-#ifndef Milk_h
+#ifndef MILK_H
 
-#define Milk_h
+#define MILK_H
 
 // Input your code here... ex) #include <iostream>
 

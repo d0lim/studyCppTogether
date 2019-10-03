@@ -1,6 +1,6 @@
-#ifndef IngredientManager_h
+#ifndef INGREDIENTMANAGER_H
 
-#define IngredientManager_h
+#define INGREDIENTMANAGER_H
 
 // Input your code here... ex) #include <iostream>
 

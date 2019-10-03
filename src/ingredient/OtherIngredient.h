@@ -1,6 +1,6 @@
-#ifndef OtherIngredient_h
+#ifndef OTHERINGREDIENT_H
 
-#define OhterIngredient_h
+#define OTHERINGREDIENT_H
 
 // Input your code here... ex) #include <iostream>
 
