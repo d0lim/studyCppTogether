@@ -20,6 +20,12 @@ void MenuManager::setMenuList(std::vector<Menu> menuList) {
 }
 
 void MenuManager::addMenu() {
+	std::string name;
+	std::vector<Ingredient> ingredientList;
+	unsigned int price;
+	unsigned int discount;
+	std::cout << "Input Menu Name : ";
+	std::cin >> name;
 	
 }
 
