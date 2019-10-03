@@ -9,7 +9,17 @@
 #include "OtherIngredient.h"
 #include <vector>
 
-
+class IngredientManager {
+public:
+	
+	
+	
+private:
+	std::vector<Milk> milkList;
+	std::vector<CoffeeBean> coffeeBeanList;
+	std::vector<OtherIngredient> otherIngredientList;
+	
+};
 
 
 
