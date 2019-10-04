@@ -7,14 +7,14 @@
 
 class Ingredient {
 public:
-	std::string getName();
-	void setName(std::string name);
-	unsigned int getPrice();
-	void setPrice(unsigned int price);
-	unsigned int getCount();
-	void setCount(unsinged int count);
-	void addCount(int addNum);
-	void reduceCount(int reduceNum);
+	virtual std::string getName() = 0;
+	virtual void setName(std::string name) = 0;
+	virtual unsigned int getPrice() = 0;
+	virtual void setPrice(unsigned int price) = 0;
+	virtual unsigned int getCount() = 0;
+	virtual void setCount(unsinged int count) = 0;
+	virtual void addCount(int addNum) = 0;
+	virtual void reduceCount(int reduceNum) = 0;
 	
 private:
 	std::string name;

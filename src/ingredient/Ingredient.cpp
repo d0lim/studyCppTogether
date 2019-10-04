@@ -17,34 +17,3 @@
 // 	unsigned int count;
 // };
 
-std::string Ingredient::getName() {
-	return name;
-}
-
-void Ingredient::setName(std::string name) {
-	this->name = name;
-}
-
-unsigned int Ingredient::getPrice() {
-	return price;
-}
-
-void Ingredient::setPrice(unsigned int price) {
-	this->price = price;
-}
-
-unsigned int Ingredient::getCount() {
-	return count;
-}
-
-void Intredient::setCount(unsigned int count) {
-	this->count = count;
-}
-
-void Ingredient::addCount(int addNum) {
-	this->count += addNum;
-}
-
-void Ingredient::reduceCount(int reduceNum) {
-	this->count -= reduceNum;
-}

@@ -10,12 +10,17 @@
 
 class MenuManager {
 public:
+	static MenuManager& instance() {
+		static MenuManager* instance = new MenuManager;
+		return instance;
+	}
 	std::vector<Menu> getMenuList();
 	void setMenuList(std::vector<Menu> menuList);
 	void addMenu();
 	void deleteMenu();
 
 private:
+	MenuManager() {}
 	std::vector<Menu> menuList;
 };
 
