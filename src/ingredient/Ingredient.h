@@ -15,6 +15,7 @@ public:
 	virtual void setCount(unsinged int count) = 0;
 	virtual void addCount(int addNum) = 0;
 	virtual void reduceCount(int reduceNum) = 0;
+	virtual ~Ingredient();
 	
 private:
 	std::string name;

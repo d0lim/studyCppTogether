@@ -7,6 +7,7 @@
 #include <vector>
 #include <string>
 #include "Menu.h"
+#include "../ingredient/IngredientManager.h"
 
 class MenuManager {
 public:

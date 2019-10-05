@@ -30,35 +30,88 @@ void MenuManager::addMenu() {
 	// need iterator
 	std::vector<Ingredient> list = IngredientManager.instance().getMilkList();
 	std::vector<Ingredient>::iterator iter;
-	int i = 1;
-	for (iter = list.begin(); iter != list.end(); ++iter){
-        std::cout << i << ". " << *iter << endl;
-		i++;
-    }
+	
+	// Select ingredient and count
+	while(true) {
+		std::cout << "Current ingredients are ";
+		for (iter = ingredientList.begin(); iter != ingredientList.end(); ++iter) {
+			std::cout << iter->name << ", ";
+		}
+		std::cout << std::endl;
+		int i = 1;
+		for (iter = list.begin(); iter != list.end(); ++iter){
+			std::cout << i << ". " << iter->name << endl;
+			i++;
+		}
+		int selection = 0;
+		std::cout << "Select the Milk to add by number(input 0 to go next) : ";
+		std::cin >> selection;
+		if (selection == 0)
+			break ;
+		else {
+			Milk temp(list[selection - 1]);	
+			ingredientList.push_back(temp);
+		}
+		
+		
+	}
+	
+	list = IngredientManager.instance().getCoffeeBeanList();
+	
+	while(true) {
+		std::cout << "Current ingredients are ";
+		for (iter = ingredientList.begin(); iter != ingredientList.end(); ++iter) {
+			std::cout << iter->name << ", ";
+		}
+		std::cout << std::endl;
+		int i = 1;
+		for (iter = list.begin(); iter != list.end(); ++iter){
+			std::cout << i << ". " << iter->name << endl;
+			i++;
+		}
+		int selection = 0;
+		std::cout << "Select the Coffee Bean to add by number(input 0 to go next) : ";
+		std::cin >> selection;
+		if (selection == 0)
+			break ;
+		else {
+			CoffeeBean temp(list[selection - 1]);	
+			ingredientList.push_back(temp);
+		}
+	}
+	
 	// Select ingredient and count
 	
-	std::vector<Ingredient> list = IngredientManager.instance().getCoffeeBeanList();
-	iter = list.begin();
-	int i = 1;
-	for (iter = list.begin(); iter != list.end(); ++iter){
-        std::cout << i << ". " << *iter << endl;
-		i++;
-    }
-	// Select ingredient and count
+	list = IngredientManager.instance().getOtherIngredientList();
 	
-	std::vector<Ingredient> list = IngredientManager.instance().getOtherIngredientList();
-	iter = list.begin();
-	int i = 1;
-	for (iter = list.begin(); iter != list.end(); ++iter){
-        std::cout << i << ". " << *iter << endl;
-		i++;
-    }
+	while(true) {
+		std::cout << "Current ingredients are ";
+		for (iter = ingredientList.begin(); iter != ingredientList.end(); ++iter) {
+			std::cout << iter->name << ", ";
+		}
+		std::cout << std::endl;
+		int i = 1;
+		for (iter = list.begin(); iter != list.end(); ++iter){
+			std::cout << i << ". " << iter->name << endl;
+			i++;
+		}
+		int selection = 0;
+		std::cout << "Select the Coffee Bean to add by number(input 0 to go next) : ";
+		std::cin >> selection;
+		if (selection == 0)
+			break ;
+		else {
+			OtherIngredient temp(list[selection - 1]);	
+			ingredientList.push_back(temp);
+		}
+	}
+	
 	// Select ingredient and count
 	
 	// calculate price
 	iter = ingredientList.begin();
 	for (; iter != ingredientList.end(); ++iter) {
-		price += *iter.getPrice();
+		price += iter->getPrice();
 	}
 	
 	// Set discount
@@ -72,5 +125,5 @@ void MenuManager::addMenu() {
 }
 
 void MenuManager::deleteMenu() {
-	
+	return ;
 }
