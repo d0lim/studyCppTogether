@@ -11,7 +11,7 @@
 // 	std::vector<Menu> menuList;
 // };
 
-static MenuManager::MenuManager& instance() {
+static MenuManager& MenuManager::instance() {
 	static MenuManager* instance = new MenuManager;
 	return instance;
 }
@@ -40,12 +40,12 @@ void MenuManager::addMenu() {
 	while(true) {
 		std::cout << "Current ingredients are ";
 		for (iter = ingredientList.begin(); iter != ingredientList.end(); ++iter) {
-			std::cout << iter->name << ", ";
+			std::cout << iter->getName() << ", ";
 		}
 		std::cout << std::endl;
 		int i = 1;
 		for (iter = list.begin(); iter != list.end(); ++iter){
-			std::cout << i << ". " << iter->name << endl;
+			std::cout << i << ". " << iter->name << std::endl;
 			i++;
 		}
 		int selection = 0;
@@ -66,12 +66,12 @@ void MenuManager::addMenu() {
 	while(true) {
 		std::cout << "Current ingredients are ";
 		for (iter = ingredientList.begin(); iter != ingredientList.end(); ++iter) {
-			std::cout << iter->name << ", ";
+			std::cout << iter->getName() << ", ";
 		}
 		std::cout << std::endl;
 		int i = 1;
 		for (iter = list.begin(); iter != list.end(); ++iter){
-			std::cout << i << ". " << iter->name << endl;
+			std::cout << i << ". " << iter->getName() << std::endl;
 			i++;
 		}
 		int selection = 0;
@@ -92,12 +92,12 @@ void MenuManager::addMenu() {
 	while(true) {
 		std::cout << "Current ingredients are ";
 		for (iter = ingredientList.begin(); iter != ingredientList.end(); ++iter) {
-			std::cout << iter->name << ", ";
+			std::cout << iter->getName() << ", ";
 		}
 		std::cout << std::endl;
 		int i = 1;
 		for (iter = list.begin(); iter != list.end(); ++iter){
-			std::cout << i << ". " << iter->name << endl;
+			std::cout << i << ". " << iter->getName() << std::endl;
 			i++;
 		}
 		int selection = 0;

@@ -13,7 +13,6 @@
 class IngredientManager {
 public:
 	static IngredientManager& instance();
-	
 	std::vector<Milk> getMilkList();
 	void setMilkList(std::vector<Milk> milkList);
 	std::vector<CoffeeBean> getCoffeeBeanList();

@@ -28,7 +28,7 @@ unsigned int OtherIngredient::getCount() {
 	return count;
 }
 
-void Intredient::setCount(unsigned int count) {
+void OtherIngredient::setCount(unsigned int count) {
 	this->count = count;
 }
 

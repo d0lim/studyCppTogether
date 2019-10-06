@@ -1,7 +1,7 @@
 #include "IngredientManager.h"
 
 
-static IngredientManager::IngredientManager& instance() {
+static IngredientManager& IngredientManager::instance() {
 	static IngredientManager* instance = new IngredientManager;
 	return instance;
 }
@@ -108,7 +108,7 @@ void IngredientManager::addOtherIngredient() {
 	// std::cin >> count;
 	
 	OtherIngredient newOtherIngredient(name, price, count);
-	OtherIngredientList.push_back(newOtherIngredient);
+	otherIngredientList.push_back(newOtherIngredient);
 }
 void IngredientManager::removeOtherIngredient() {
 	return ;
