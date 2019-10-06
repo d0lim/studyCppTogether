@@ -1,5 +1,12 @@
 #include "CoffeeBean.h"
 
+CoffeeBean::CoffeeBean(std::string _name, unsigned int _price, unsigned int _count) : name(_name), price(_price), count(_count) {}
+
+CoffeeBean::CoffeeBean(const CoffeeBean& copy) : price(copy.price), count(copy.count)
+{
+	name = copy.name;
+}
+
 std::string CoffeeBean::getName() {
 	return name;
 }
@@ -20,7 +27,7 @@ unsigned int CoffeeBean::getCount() {
 	return count;
 }
 
-void Intredient::setCount(unsigned int count) {
+void CoffeeBean::setCount(unsigned int count) {
 	this->count = count;
 }
 

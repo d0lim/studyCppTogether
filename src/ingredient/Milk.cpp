@@ -1,5 +1,12 @@
 #include "Milk.h"
 
+Milk::Milk(std::string _name, unsigned int _price, unsigned int _count) : name(_name), price(_price), count(_count) {}
+
+Milk::Milk(const Milk& copy) : price(copy.price), count(copy.count)
+{
+	name = copy.name;
+}
+
 std::string Milk::getName() {
 	return name;
 }
@@ -20,7 +27,7 @@ unsigned int Milk::getCount() {
 	return count;
 }
 
-void Intredient::setCount(unsigned int count) {
+void Milk::setCount(unsigned int count) {
 	this->count = count;
 }
 

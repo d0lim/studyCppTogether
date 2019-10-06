@@ -12,8 +12,8 @@ public:
 	Menu(std::string _name, std::vector<Ingredient> _ingredientList, unsigned int _price, unsigned int _discount) : name(_name), ingredientList(_ingredientList), price(_price), discount(_discount) {}
 	std::string getName();
 	void setName(std::string name);
-	std::vector getIngredientList();
-	void setIngredientList(std::vector ingredientList);
+	std::vector<Ingredient> getIngredientList();
+	void setIngredientList(std::vector<Ingredient> ingredientList);
 	unsigned int getPrice();
 	void setPrice(unsigned int price);
 	unsigned int getDiscount();

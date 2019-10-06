@@ -1,4 +1,12 @@
-#include "OtherOtherIngredient.h"
+#include "OtherIngredient.h"
+
+OtherIngredient::OtherIngredient(std::string _name, unsigned int _price, unsigned int _count) : name(_name), price(_price), count(_count) {}
+
+OtherIngredient::OtherIngredient(const OtherIngredient& copy) : price(copy.price), count(copy.count)
+{
+	name = copy.name;
+}
+
 
 std::string OtherIngredient::getName() {
 	return name;

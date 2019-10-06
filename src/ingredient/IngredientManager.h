@@ -3,18 +3,16 @@
 #define INGREDIENTMANAGER_H
 
 // Input your code here... ex) #include <iostream>
+#include <vector>
 #include "Ingredient.h"
 #include "CoffeeBean.h"
 #include "Milk.h"
 #include "OtherIngredient.h"
-#include <vector>
+
 
 class IngredientManager {
 public:
-	static IngredientManager& instance() {
-		static IngredientManager* instance = new IngredientManager;
-		return instance;
-	}
+	static IngredientManager& instance();
 	
 	std::vector<Milk> getMilkList();
 	void setMilkList(std::vector<Milk> milkList);

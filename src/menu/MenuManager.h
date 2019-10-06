@@ -4,17 +4,14 @@
 
 // Input your code here... ex) #include <iostream>
 #include <iostream>
-#include <vector>
 #include <string>
 #include "Menu.h"
 #include "../ingredient/IngredientManager.h"
+#include <vector>
 
 class MenuManager {
 public:
-	static MenuManager& instance() {
-		static MenuManager* instance = new MenuManager;
-		return instance;
-	}
+	static MenuManager& instance();
 	std::vector<Menu> getMenuList();
 	void setMenuList(std::vector<Menu> menuList);
 	void addMenu();

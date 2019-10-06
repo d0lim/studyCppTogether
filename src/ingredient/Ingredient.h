@@ -12,12 +12,12 @@ public:
 	virtual unsigned int getPrice() = 0;
 	virtual void setPrice(unsigned int price) = 0;
 	virtual unsigned int getCount() = 0;
-	virtual void setCount(unsinged int count) = 0;
+	virtual void setCount(unsigned int count) = 0;
 	virtual void addCount(int addNum) = 0;
 	virtual void reduceCount(int reduceNum) = 0;
 	virtual ~Ingredient();
 	
-private:
+protected:
 	std::string name;
 	unsigned int price;
 	unsigned int count;

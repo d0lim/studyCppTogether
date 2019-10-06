@@ -1,5 +1,10 @@
 #include "IngredientManager.h"
 
+
+static IngredientManager::IngredientManager& instance() {
+	static IngredientManager* instance = new IngredientManager;
+	return instance;
+}
 // class IngredientManager {
 // public:
 // 	static IngredientManager& instance() {

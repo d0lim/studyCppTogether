@@ -11,6 +11,11 @@
 // 	std::vector<Menu> menuList;
 // };
 
+static MenuManager::MenuManager& instance() {
+	static MenuManager* instance = new MenuManager;
+	return instance;
+}
+
 std::vector<Menu> MenuManager::getMenuList() {
 	return menuList;
 }
