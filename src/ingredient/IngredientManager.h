@@ -3,37 +3,48 @@
 #define INGREDIENTMANAGER_H
 
 // Input your code here... ex) #include <iostream>
+#include <iostream>
 #include <vector>
 #include "Ingredient.h"
-#include "CoffeeBean.h"
-#include "Milk.h"
-#include "OtherIngredient.h"
 
 
 class IngredientManager {
 public:
-	static IngredientManager& instance();
-	std::vector<Milk> getMilkList();
-	void setMilkList(std::vector<Milk> milkList);
-	std::vector<CoffeeBean> getCoffeeBeanList();
-	void setCoffeeBeanList(std::vector<CoffeeBean> coffeeBeanList);
-	std::vector<OtherIngredient> getOtherIngredientList();
-	void setOtherIngredientList(std::vector<OtherIngredient> otherIngredientList);
-	void addCoffeeBean();
-	void removeCoffeeBean();
-	void addMilk();
-	void removeMilk();
-	void addOtherIngredient();
-	void removeOtherIngredient();
 	
+	std::vector<Ingredient> getIngredientList();
+	void setIngredientList(std::vector<Ingredient> ingredientList);
+    std::vector<std::string> getCategoryList();
+    void setCategoryList(std::vector<std::string> categoryList);
+	
+	void addIngredient();
+	void removeIngredient();
+    void addCategory();
+    void removeCategory();
+	static IngredientManager* getInstance()
+    {
+		if (!ins) {
+			ins = new IngredientManager();
+		}
+        return ins;
+    }
+
+
+
+
+
+
 	
 private:
-	IngredientManager() {}
-	std::vector<Milk> milkList;
-	std::vector<CoffeeBean> coffeeBeanList;
-	std::vector<OtherIngredient> otherIngredientList;
-	
+
+	IngredientManager(){}
+    IngredientManager(const IngredientManager& other){}
+    ~IngredientManager(){}
+	static IngredientManager* ins;
+	std::vector<Ingredient> ingredientList;
+	std::vector<std::string> categoryList;
 };
+
+
 
 
 

@@ -6,18 +6,22 @@
 #include <string>
 
 class Ingredient {
-public:
-	virtual std::string getName() = 0;
-	virtual void setName(std::string name) = 0;
-	virtual unsigned int getPrice() = 0;
-	virtual void setPrice(unsigned int price) = 0;
-	virtual unsigned int getCount() = 0;
-	virtual void setCount(unsigned int count) = 0;
-	virtual void addCount(int addNum) = 0;
-	virtual void reduceCount(int reduceNum) = 0;
-	virtual ~Ingredient();
+public:    
+    Ingredient(std::string _category, std::string _name, unsigned int _price, unsigned int _count);
+    Ingredient(std::string _name, unsigned int _price, unsigned int _count);
+    std::string getCategory();
+	void setCategory(std::string category);
+	std::string getName();
+	void setName(std::string name);
+	unsigned int getPrice();
+	void setPrice(unsigned int price);
+	unsigned int getCount();
+	void setCount(unsigned int count);
+	void addCount(int addNum);
+	void reduceCount(int reduceNum);
 	
 protected:
+    std::string category;
 	std::string name;
 	unsigned int price;
 	unsigned int count;

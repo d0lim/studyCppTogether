@@ -9,7 +9,7 @@
 
 class Menu {
 public:
-	Menu(std::string _name, std::vector<Ingredient> _ingredientList, unsigned int _price, unsigned int _discount) : name(_name), ingredientList(_ingredientList), price(_price), discount(_discount) {}
+	Menu(std::string _name, std::vector<Ingredient> _ingredientList, unsigned int _price, unsigned int _discount);
 	std::string getName();
 	void setName(std::string name);
 	std::vector<Ingredient> getIngredientList();

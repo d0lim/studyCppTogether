@@ -1,64 +1,47 @@
 #include "IngredientManager.h"
 
+IngredientManager* IngredientManager::ins = 0; // or NULL, or nullptr in c++11
 
-static IngredientManager& IngredientManager::instance() {
-	static IngredientManager* instance = new IngredientManager;
-	return instance;
+std::vector<Ingredient> IngredientManager::getIngredientList() {
+	return ingredientList;
 }
-// class IngredientManager {
-// public:
-// 	static IngredientManager& instance() {
-// 		static IngredientManager* instance = new IngredientManager;
-// 		return instance;
-// 	}
-	
-// 	std::vector<Milk> getMilkList();
-// 	void setMilkList(std::vector<Milk> milkList);
-// 	std::vector<CoffeeBean> getCoffeeBeanList();
-// 	void setCoffeeBeanList(std::vector<CoffeeBean> coffeeBeanList);
-// 	std::vector<OtherIngredient> getOtherIngredientList();
-// 	void setOtherIngredientList(std::vector<OtherIngredient> otherIngredientList);
-// 	void addCoffeeBean();
-// 	void removeCoffeeBean();
-// 	void addMilk();
-// 	void removeMilk();
-// 	void addOtherIngredient();
-// 	void removeOtherIngredient();
-	
-	
-// private:
-// 	IngredientManager() {}
-// 	std::vector<Milk> milkList;
-// 	std::vector<CoffeeBean> coffeeBeanList;
-// 	std::vector<OtherIngredient> otherIngredientList;
-	
-// };
+void IngredientManager::setIngredientList(std::vector<Ingredient> ingredientList) {
+	this->ingredientList = ingredientList;
+}
 
+std::vector<std::string> IngredientManager::getCategoryList() {
+    return categoryList;
+}
+void IngredientManager::setCategoryList(std::vector<std::string> categoryList) {
+    this->categoryList = categoryList;
+}
 
-std::vector<Milk> IngredientManager::getMilkList() {
-	return milkList;
+void IngredientManager::addCategory() {
+    std::string newCategory;
+    std::cout << "Input new category: ";
+    std::cin >> newCategory;
+    categoryList.push_back(newCategory);
 }
-void IngredientManager::setMilkList(std::vector<Milk> milkList) {
-	this->milkList = milkList;
+
+void IngredientManager::removeCategory() {
+    return ;
 }
-std::vector<CoffeeBean> IngredientManager::getCoffeeBeanList() {
-	return coffeeBeanList;
-}
-void IngredientManager::setCoffeeBeanList(std::vector<CoffeeBean> coffeeBeanList) {
-	this->coffeeBeanList = coffeeBeanList;
-}
-std::vector<OtherIngredient> IngredientManager::getOtherIngredientList() {
-	return otherIngredientList;
-}
-void IngredientManager::setOtherIngredientList(std::vector<OtherIngredient> otherIngredientList) {
-	this->otherIngredientList = otherIngredientList;
-}
-void IngredientManager::addCoffeeBean() {
+
+void IngredientManager::addIngredient() {
+    std::string category;
+    int selection = 0;
 	std::string name;
 	unsigned int price = 0;
 	unsigned int count = 1;
 	
-	
+	std::vector<std::string>::iterator iter;
+    int i = 1;
+    for (iter = categoryList.begin(); iter != categoryList.end(); ++iter) {
+        std::cout << i << ". " << *iter << std::endl;
+    }
+    std::cout << "Select Category : ";
+    std::cin >> selection;
+    category = categoryList[selection - 1];
 	std::cout << "Input name : ";
 	std::cin >> name;
 	std::cout << "Input price : ";
@@ -67,49 +50,10 @@ void IngredientManager::addCoffeeBean() {
 	// std::cout << "Input count : ";
 	// std::cin >> count;
 	
-	CoffeeBean newCoffeeBean(name, price, count);
-	coffeeBeanList.push_back(newCoffeeBean);
+	Ingredient newIngredient(category, name, price, count);
+	ingredientList.push_back(newIngredient);
 }
-void IngredientManager::removeCoffeeBean() {
-	return ;
-}
-void IngredientManager::addMilk() {
-	std::string name;
-	unsigned int price = 0;
-	unsigned int count = 1;
-	
-	
-	std::cout << "Input name : ";
-	std::cin >> name;
-	std::cout << "Input price : ";
-	std::cin >> price;
-	/* Wonder whether we need count on ingredient class. */
-	// std::cout << "Input count : ";
-	// std::cin >> count;
-	
-	Milk newMilk(name, price, count);
-	milkList.push_back(newMilk);
-}
-void IngredientManager::removeMilk() {
-	return ;
-}
-void IngredientManager::addOtherIngredient() {
-	std::string name;
-	unsigned int price = 0;
-	unsigned int count = 1;
-	
-	
-	std::cout << "Input name : ";
-	std::cin >> name;
-	std::cout << "Input price : ";
-	std::cin >> price;
-	/* Wonder whether we need count on ingredient class. */
-	// std::cout << "Input count : ";
-	// std::cin >> count;
-	
-	OtherIngredient newOtherIngredient(name, price, count);
-	otherIngredientList.push_back(newOtherIngredient);
-}
-void IngredientManager::removeOtherIngredient() {
+
+void IngredientManager::removeIngredient() {
 	return ;
 }

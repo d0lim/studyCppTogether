@@ -6,21 +6,36 @@
 #include <iostream>
 #include <string>
 #include "Menu.h"
-#include "../ingredient/IngredientManager.h"
 #include <vector>
+#include "../ingredient/IngredientManager.h"
+
 
 class MenuManager {
 public:
-	static MenuManager& instance();
 	std::vector<Menu> getMenuList();
 	void setMenuList(std::vector<Menu> menuList);
 	void addMenu();
 	void deleteMenu();
+	static MenuManager* getInstance()
+    {
+        if (!ins) {
+			ins = new MenuManager();
+		}
+        return ins;
+    }
+
 
 private:
-	MenuManager() {}
+	
+	MenuManager(){}
+    MenuManager(const MenuManager& other){}
+    ~MenuManager(){}
 	std::vector<Menu> menuList;
+	static MenuManager* ins;
 };
+
+
+
 
 
 #endif

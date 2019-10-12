@@ -19,6 +19,7 @@
 // 	unsigned int discount;
 	
 // };
+Menu::Menu(std::string _name, std::vector<Ingredient> _ingredientList, unsigned int _price, unsigned int _discount) : name(_name), ingredientList(_ingredientList), price(_price), discount(_discount) {}
 
 std::string Menu::getName() {
 	return name;
@@ -28,11 +29,11 @@ void Menu::setName(std::string name) {
 	this->name = name;
 }
 
-std::vector Menu::getIngredientList() {
+std::vector<Ingredient> Menu::getIngredientList() {
 	return ingredientList;
 }
 
-void Menu::setIngredientList(std::vector ingredientList) {
+void Menu::setIngredientList(std::vector<Ingredient> ingredientList) {
 	this->ingredientList = ingredientList;
 }
 
