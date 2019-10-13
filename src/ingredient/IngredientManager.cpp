@@ -25,6 +25,10 @@ void IngredientManager::addCategory() {
     categoryList.push_back(newCategory);
 }
 
+void IngredientManager::addCategory(std::string newCategory) {
+	categoryList.push_back(newCategory);
+}
+
 void IngredientManager::removeCategory() {
     return ;
 }
@@ -56,17 +60,23 @@ void IngredientManager::addIngredient() {
 	ingredientList.push_back(newIngredient);
 }
 
+void IngredientManager::addIngredient(std::string category, std::string name, unsigned int price) {
+	Ingredient newIngredient(category, name, price, 1);
+	ingredientList.push_back(newIngredient);
+}
+
 void IngredientManager::removeIngredient() {
 	return ;
 }
 
 void IngredientManager::saveIngredientList(std::string path) {
-	std::ofstream out(path);
+	return ;
+	// std::ofstream out(path);
 
-    std::string s;
-    if (out.is_open()) {
-      out << "이걸 쓰자~~";
-    }
+	// std::string s;
+	// if (out.is_open()) {
+	// out << "이걸 쓰자~~";
+	// }
 }
 
 void IngredientManager::loadIngredientList(std::string path) {
@@ -94,11 +104,44 @@ void IngredientManager::loadIngredientList(std::string path) {
 	const char * c = data.c_str();
 	// std::cout << c << std::endl;
 	Document document;
-	document.Parse(c);
+	document.Parse<0>(c);
+	
+	if (document.HasParseError())
+	{
+		std::cout << "Parsing Error!" << std::endl;
+		return ;
+	}
+
 	assert(document.IsObject());
 	
-	printf("%s\n", document["CoffeeBean"][0]["name"].GetString());
+	// printf("%s\n", document["CoffeeBean"][0]["name"].GetString());
+	
+	rapidjson::Value::MemberIterator    iter;
+	const char                          *category, *name;
+	unsigned int price;
+
+
+	// Get ingredients and add to ingreList
+	// Loop by the key.
+	for (iter = document.MemberBegin(); iter != document.MemberEnd(); iter++)
+	{
+		category   = iter->name.GetString();
 		
+		if (category!=NULL)
+		{
+			printf("%s\n", category);
+			addCategory(category);
+			for (SizeType i = 0; i < (iter->value).Size(); i++) {
+				printf("%s - %s - %d\n", category, (iter->value)[i]["name"].GetString(), (iter->value)[i]["price"].GetInt());
+				addIngredient(category, (iter->value)[i]["name"].GetString(), (iter->value)[i]["price"].GetInt());
+			}
+		}
+	}
+	
+	
+	
+	
+	
 
 }
 

@@ -83,4 +83,45 @@ void MenuManager::deleteMenu() {
 	return ;
 }
 
+void MenuManager::loadMenuList(std::string path) {
+	std::ifstream file(path);
+	std::string data;
+	if (file.is_open()) {
+		// 위치 지정자를 파일 끝으로 옮긴다.
+    file.seekg(0, std::ios::end);
+
+    // 그리고 그 위치를 읽는다. (파일의 크기)
+    int size = file.tellg();
+
+    // 그 크기의 문자열을 할당한다.
+    data.resize(size);
+
+    // 위치 지정자를 다시 파일 맨 앞으로 옮긴다.
+    file.seekg(0, std::ios::beg);
+
+    // 파일 전체 내용을 읽어서 문자열에 저장한다.
+    file.read(&data[0], size);
+    // std::cout << data << std::endl;
+	} else {
+    	std::cout << "파일을 찾을 수 없습니다!" << std::endl;
+    }
+	const char * c = data.c_str();
+	// std::cout << c << std::endl;
+	Document document;
+	document.Parse<0>(c);
+	
+	if (document.HasParseError())
+	{
+		std::cout << "Parsing Error!" << std::endl;
+		return ;
+	}
+
+	assert(document.IsObject());
+	
+	
+}
+
+void MenuManager::saveMenuList(std::string path) {
+	return ;
+}
 

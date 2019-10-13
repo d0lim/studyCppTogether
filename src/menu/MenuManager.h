@@ -24,8 +24,8 @@ public:
         return ins;
     }
 	
-	void saveMenuList();
-	void loadMenuList();
+	void saveMenuList(std::string path);
+	void loadMenuList(std::string path);
 
 
 private:

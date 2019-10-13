@@ -20,8 +20,10 @@ public:
     void setCategoryList(std::vector<std::string> categoryList);
 	
 	void addIngredient();
+	void addIngredient(std::string category, std::string name, unsigned int price);
 	void removeIngredient();
     void addCategory();
+	void addCategory(std::string newCategory);
     void removeCategory();
 	static IngredientManager* getInstance()
     {
