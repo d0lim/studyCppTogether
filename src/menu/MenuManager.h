@@ -23,6 +23,9 @@ public:
 		}
         return ins;
     }
+	
+	void saveMenuList();
+	void loadMenuList();
 
 
 private:

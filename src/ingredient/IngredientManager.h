@@ -3,9 +3,12 @@
 #define INGREDIENTMANAGER_H
 
 // Input your code here... ex) #include <iostream>
+#include <fstream>
 #include <iostream>
 #include <vector>
 #include "Ingredient.h"
+#include "../../lib/rapidjson/include/rapidjson/document.h"     // rapidjson's DOM-style API
+#include "../../lib/rapidjson/include/rapidjson/prettywriter.h" // for stringify JSON
 
 
 class IngredientManager {
@@ -27,7 +30,9 @@ public:
 		}
         return ins;
     }
-
+	
+	void saveIngredientList(std::string path);
+	void loadIngredientList(std::string path);
 
 
 

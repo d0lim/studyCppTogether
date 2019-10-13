@@ -1,0 +1,22 @@
+{
+  "CoffeeBean":[
+    {
+      "name":"Arabica",
+      "price":4000
+    },
+    {
+      "name":"Colombia",
+      "price":4000
+    },
+    {
+      "name":"Special",
+      "price":6000
+    }
+  ],
+  "Other":[
+    {
+      "name":"Water",
+      "price":1000
+    }
+  ]
+}
