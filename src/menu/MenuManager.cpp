@@ -166,7 +166,6 @@ void MenuManager::loadMenuList(std::string path) {
 		menuList.push_back(newMenu);
 		
 	}
-
 	
 }
 
