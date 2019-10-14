@@ -7,6 +7,7 @@
 #include <string>
 #include "Menu.h"
 #include <vector>
+#include <algorithm>
 #include "../ingredient/IngredientManager.h"
 
 

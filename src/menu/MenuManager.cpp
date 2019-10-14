@@ -1,5 +1,7 @@
 #include "MenuManager.h"
 
+using namespace rapidjson;
+
 MenuManager* MenuManager::ins = 0; // or NULL, or nullptr in c++11
 
 // class MenuManager {
@@ -115,9 +117,56 @@ void MenuManager::loadMenuList(std::string path) {
 		std::cout << "Parsing Error!" << std::endl;
 		return ;
 	}
-
 	assert(document.IsObject());
 	
+	const Value& jsonMenuList = document["menuList"];
+	const char* name;
+	unsigned int price;
+	unsigned int discount;
+	std::vector<Ingredient> ingredientList;
+	IngredientManager* instance = IngredientManager::getInstance();
+	std::vector<Ingredient>::iterator ingredientIter;
+	std::vector<Ingredient> ingredients = instance->getIngredientList();
+
+
+
+	for (SizeType i = 0; i < jsonMenuList.Size(); i++) {
+		//need to get ingredient by category and name
+		// and add those ingredients to new Menu's ingredient List
+		ingredientList.clear();
+		name = jsonMenuList[i]["name"].GetString();
+		std::cout << name << std::endl;
+		discount = jsonMenuList[i]["discount"].GetInt();
+		std::cout << discount << std::endl;
+
+		for (SizeType j = 0; j < jsonMenuList[i]["ingredientList"].Size(); j++) {
+			const char *category, *ingreName;
+
+			category = jsonMenuList[i]["ingredientList"][j]["category"].GetString();
+			ingreName = jsonMenuList[i]["ingredientList"][j]["name"].GetString();
+			// search ingredient list
+			for (ingredientIter = ingredients.begin(); ingredientIter != ingredients.end(); ++ingredientIter) {
+				if (ingredientIter->getCategory() == category && ingredientIter->getName() == ingreName) {
+					ingredientList.push_back(*ingredientIter);
+				}
+			}
+			
+			
+		}
+		// calculate price
+		price = 0;
+		for (ingredientIter = ingredientList.begin(); ingredientIter != ingredientList.end(); ++ingredientIter) {
+			price += ingredientIter->getPrice();
+		}
+		Menu newMenu(name, ingredientList, price, discount);
+		std::cout << "===========" << std::endl;
+		std::cout << "Name : " << name << std::endl;
+		std::cout << "Price : " << price << std::endl;
+		std::cout << "===========" << std::endl;
+		menuList.push_back(newMenu);
+		
+	}
+
 	
 }
 

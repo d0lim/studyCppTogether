@@ -4,7 +4,8 @@
 void showMenu();
 void editMenu();
 void editIngredient();
-void fileLoadTest();
+void ingreLoadTest();
+void menuLoadTest();
 
 
 int main(void)
@@ -34,14 +35,20 @@ int main(void)
 	// 			break;
 	// 	}
 	// }
-	fileLoadTest();
+	ingreLoadTest();
+	menuLoadTest();
     
     return 0;
 } 
 
-void fileLoadTest() {
+void ingreLoadTest() {
 	IngredientManager* instance = IngredientManager::getInstance();
 	instance->loadIngredientList("./studyCppTogether/data/ingredient.json");
+}
+
+void menuLoadTest() {
+	MenuManager* instance = MenuManager::getInstance();
+	instance->loadMenuList("./studyCppTogether/data/menu.json");
 }
 
 void showMenu() {
