@@ -17,8 +17,8 @@ int main(void)
 	
 		std::cout << "========== Select Operation ===========" << std::endl;
 		std::cout << "1. Show Menu" << std::endl;
-		std::cout << "2. Edit Menu" << std::endl;
-		std::cout << "3. Edit Ingredient" << std::endl;
+		std::cout << "2. Edit Menu(Not Work)" << std::endl;
+		std::cout << "3. Edit Ingredient(Not Work)" << std::endl;
 		std::cout << "0. Exit" << std::endl;
 		std::cout << "Input : ";
 		std::cin >> input;
@@ -66,11 +66,11 @@ void showMenu() {
 }
 
 void editMenu() {
-	
+	std::cout << "Not Developed yet" << std::endl;
 }
 
 void editIngredient() {
-	
+	std::cout << "Not Developed yet" << std::endl;
 }
 
 
