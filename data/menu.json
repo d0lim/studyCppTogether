@@ -1,0 +1,32 @@
+{
+  "menuList":[
+    {
+      "name":"Americano",
+      "discount":0,
+      "ingredientList":[
+        {
+          "category":"CoffeeBean",
+          "name":"Arabica"
+        },
+        {
+          "category":"Other",
+          "name":"Water"
+        }
+      ]
+    },
+    {
+      "name":"Specialty",
+      "discount":0,
+      "ingredientList":[
+        {
+          "category":"CoffeeBean",
+          "name":"Special"
+        },
+        {
+          "category":"Other",
+          "name":"Water"
+        }
+      ]
+    }
+  ]
+}
